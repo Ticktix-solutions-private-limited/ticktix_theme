@@ -1,0 +1,248 @@
+/* Ticktix Theme — website / portal pages (e.g. /me "My Account") */
+
+:root {
+	--tw-primary: #4f46e5;
+	--tw-primary-hover: #4338ca;
+	--tw-soft: #eef2ff;
+	--tw-bg: #f5f7fb;
+	--tw-border: #e3e8f0;
+	--tw-text: #0f172a;
+	--tw-muted: #64748b;
+}
+
+body {
+	background: var(--tw-bg);
+	color: var(--tw-text);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ---- Top bar (injected by JS) ---- */
+.tw-topbar {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 56px;
+	padding: 0 24px;
+	background: #fff;
+	border-bottom: 1px solid var(--tw-border);
+}
+.tw-topbar a.tw-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 14px;
+	border-radius: 8px;
+	background: var(--tw-soft);
+	color: var(--tw-primary);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background 0.15s, color 0.15s;
+}
+.tw-topbar a.tw-back:hover {
+	background: var(--tw-primary);
+	color: #fff;
+}
+.tw-topbar .tw-user {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--tw-muted);
+}
+
+/* ---- Layout ---- */
+.web-sidebar,
+main.container,
+.page-content-wrapper main {
+	font-size: 14px;
+}
+.sidebar-column {
+	padding-top: 32px;
+}
+.page-content-wrapper {
+	padding-top: 16px;
+}
+.page-breadcrumbs:empty {
+	display: none;
+}
+
+/* ---- Sidebar ---- */
+.web-sidebar {
+	padding: 10px;
+	background: #fff;
+	border: 1px solid var(--tw-border);
+	border-radius: 14px;
+}
+.web-sidebar .sidebar-items ul {
+	margin: 0;
+	padding: 0;
+}
+.web-sidebar .sidebar-item a {
+	display: block;
+	padding: 9px 12px;
+	margin: 1px 0;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--tw-text);
+	text-decoration: none;
+	transition: background 0.12s, color 0.12s;
+}
+.web-sidebar .sidebar-item a:hover {
+	background: #f1f5f9;
+}
+.web-sidebar .sidebar-item a.active {
+	background: var(--tw-soft);
+	color: var(--tw-primary);
+	font-weight: 600;
+}
+.web-sidebar .sidebar-group h6 {
+	margin: 14px 12px 6px;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--tw-muted);
+}
+/* "My Account" link sits apart from the rest */
+.web-sidebar .sidebar-items > ul:last-child {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid var(--tw-border);
+}
+
+/* ---- My Account ---- */
+.my-account-container {
+	max-width: 860px;
+}
+.my-account-header {
+	margin: 8px 0 20px;
+	font-size: 28px;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	color: var(--tw-text);
+}
+.account-info {
+	margin: 0;
+	background: #fff;
+	border: 1px solid var(--tw-border);
+	border-radius: 16px;
+	box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.08);
+	overflow: hidden;
+}
+.account-info > .col {
+	padding: 20px 24px;
+	border-bottom: 1px solid var(--tw-border);
+	flex: none;
+	width: 100%;
+}
+.account-info > .col:last-child {
+	border-bottom: 0;
+}
+.account-info > .col:first-child {
+	background: linear-gradient(180deg, rgba(99, 102, 241, 0.07), transparent);
+}
+.my-account-avatar .avatar,
+.my-account-avatar .avatar-frame {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	font-size: 18px;
+	font-weight: 600;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(99, 102, 241, 0.3);
+}
+.my-account-name {
+	font-size: 18px;
+	font-weight: 600;
+	margin-left: 14px !important;
+}
+.my-account-item {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--tw-text);
+}
+.my-account-item-desc {
+	margin-top: 2px;
+	font-size: 13px;
+	color: var(--tw-muted);
+}
+.my-account-item-link a {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 14px;
+	border: 1px solid #cbd5e1;
+	border-radius: 8px;
+	background: #fff;
+	color: var(--tw-text);
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.my-account-item-link a:hover {
+	border-color: var(--tw-primary);
+	background: var(--tw-soft);
+	color: var(--tw-primary);
+}
+.my-account-item-link .icon {
+	stroke: currentColor;
+}
+.my-account-item-link .item-link-text {
+	padding-left: 0 !important;
+}
+
+/* ---- Buttons / inputs on website pages ---- */
+.btn-primary,
+.btn-primary:focus {
+	background: var(--tw-primary);
+	border-color: var(--tw-primary);
+}
+.btn-primary:hover {
+	background: var(--tw-primary-hover);
+	border-color: var(--tw-primary-hover);
+}
+.form-control:focus {
+	border-color: var(--tw-primary);
+	box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+a {
+	color: var(--tw-primary);
+}
+
+/* ---- Footer ---- */
+.web-footer {
+	margin-top: 48px;
+	padding: 28px 0;
+	background: #fff;
+	border-top: 1px solid var(--tw-border);
+}
+.web-footer .form-control {
+	border-radius: 8px;
+}
+.web-footer .btn {
+	border-radius: 8px;
+	font-weight: 600;
+}
+.web-footer .footer-powered,
+.web-footer .footer-info {
+	color: var(--tw-muted);
+	font-size: 13px;
+}
+
+@media (max-width: 767px) {
+	.tw-topbar { padding: 0 14px; }
+	.sidebar-column { padding-top: 16px; }
+	.account-info > .col { padding: 16px; }
+	.my-account-header { font-size: 24px; }
+}
+
+/* One ring only: the outer .avatar carries it, the inner frame stays flat */
+.my-account-avatar .avatar-frame,
+.my-account-avatar .avatar .avatar-frame {
+	box-shadow: none !important;
+	width: 100%;
+	height: 100%;
+}
